@@ -15,5 +15,13 @@ class TVFunSuiteTest extends FunSuiteBaseClass {
     assert(tv.isOn())
   }
 
+  test("After powering off the tv should be off"){
+    val tv = new TV
+    tv.turnTVOn()
+    assert(tv.isOn())
+    tv.turnTVOff()
+    assert(!tv.isOn())
+  }
+
 
 }
