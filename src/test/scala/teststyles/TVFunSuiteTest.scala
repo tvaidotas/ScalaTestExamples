@@ -2,21 +2,27 @@ package teststyles
 
 import baseclasses.FunSuiteBaseClass
 import classestotestagainst.TV
+import org.scalatest.BeforeAndAfter
 
-class TVFunSuiteTest extends FunSuiteBaseClass {
+class TVFunSuiteTest extends FunSuiteBaseClass with BeforeAndAfter  {
+
+  var tv: TV = _
+
+  before {
+    println("before")
+    tv = new TV()
+  }
 
   test("A new tv should be powered off") {
-    assert(!(new TV).isOn())
+    assert(!tv.isOn())
   }
 
   test("After pressing power button on a tv that is off, tv should power on") {
-    val tv = new TV
     tv.turnTVOn()
     assert(tv.isOn())
   }
 
   test("After powering off the tv should be off"){
-    val tv = new TV
     tv.turnTVOn()
     assert(tv.isOn())
     tv.turnTVOff()
