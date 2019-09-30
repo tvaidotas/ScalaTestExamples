@@ -2,9 +2,8 @@ package teststyles
 
 import baseclasses.FunSuiteBaseClass
 import classestotestagainst.TV
-import org.scalatest.BeforeAndAfter
 
-class TVFunSuiteTest extends FunSuiteBaseClass with BeforeAndAfter  {
+class TVFunSuiteTest extends FunSuiteBaseClass {
 
   var tv: TV = _
 
